@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let the Flowers Fall Where They May</title>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.48/build/spline-viewer.js"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle, #1b1b1b, #0d0d0d);
+      overflow: hidden;
+      color: #e5e5e5;
+    }
+
+    #introduction {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #0d0d0d, #1b1b1b);
+      color: #e5e5e5;
+    }
+
+    #introduction h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    #introduction p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    #introduction button {
+      background: #e63946;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    #introduction button:hover {
+      background: #d62839;
+      transform: scale(1.1);
+    }
+
+    #garden-container {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .flower-card {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+      background: #222;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .flower-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.9);
+    }
+
+    spline-viewer {
+      width: 100%;
+      height: 100%;
+    }
+
+    .flower-label {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 1rem;
+      color: #fff;
+      text-align: center;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="introduction">
+    <h1>Let the Flowers Fall Where They May</h1>
+    <p>Welcome to the Flower Garden.</p>
+    <button onclick="enterGarden()">Enter the Garden</button>
+  </div>
+
+  <div id="garden-container">
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/4ibfi4UGK4V1fAGT/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Sakura</div>
+    </div>
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/sdF0HPLtrFfBe6Dj/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Wallflower</div>
+    </div>
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/RuCS1aupAQ7I1JSa/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Orchid</div>
+    </div>
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/OzLgRR82FYhBMRVL/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Lilly</div>
+    </div>
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/zhkbUuNbJ2h0eBMN/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Jasmine</div>
+    </div>
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/WA3pbGaevuA-6ngE/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Rose</div>
+    </div>
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/Co-Yh58JRImnIy3q/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Daffodils</div>
+    </div>
+    <div class="flower-card">
+      <spline-viewer url="https://prod.spline.design/riUFKYs4j-aY5Jkv/scene.splinecode"></spline-viewer>
+      <div class="flower-label">Poppy</div>
+    </div>
+  </div>
+
+  <script>
+    const introduction = document.getElementById('introduction');
+    const gardenContainer = document.getElementById('garden-container');
+
+    function enterGarden() {
+      introduction.style.display = 'none';
+      gardenContainer.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
